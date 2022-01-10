@@ -58,7 +58,7 @@ RSpec.describe User, type: :model do
       )
       @user.save
       @user2 = User.new(
-        first_name: "Jesus",
+        first_name: "John",
         last_name: "Cena",
         email: "JesusDBarnum@dayrep.com",
         password: "12345678abc",
@@ -67,8 +67,38 @@ RSpec.describe User, type: :model do
       expect(@user2.valid?).to be_falsy
     end
 
-    
+    it "should NOT create the user if first_name is not present" do
+      @user = User.new(
+        first_name: nil,
+        last_name: "Barnum",
+        email: "JesusDBarnum@dayrep.com",
+        password: "123456789",
+        password_confirmation: "123456789"
+      )
+      expect(@user.valid?).to be_falsy
+    end
 
+    it "should NOT create the user if last_name is not present" do
+      @user = User.new(
+        first_name: "John",
+        last_name: nil,
+        email: "JesusDBarnum@dayrep.com",
+        password: "123456789",
+        password_confirmation: "123456789"
+      )
+      expect(@user.valid?).to be_falsy
+    end
+
+    it "should NOT create the user if email is not present" do
+      @user = User.new(
+        first_name: "John",
+        last_name: "Barnum",
+        email: nil,
+        password: "123456789",
+        password_confirmation: "123456789"
+      )
+      expect(@user.valid?).to be_falsy
+    end
 
 
 
