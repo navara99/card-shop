@@ -27,6 +27,11 @@ RSpec.describe Product, type: :model do
       expect(@product.valid?).to be_falsy
     end
 
+    it "should not be valid if category is not present" do
+      @product = Product.new name: "Apple", price: 3, quantity: 100, category: nil
+      expect(@product.valid?).to be_falsy
+    end
+
 
   end
 end
