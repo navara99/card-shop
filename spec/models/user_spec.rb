@@ -20,14 +20,33 @@ RSpec.describe User, type: :model do
         first_name: "Jesus",
         last_name: "Barnum",
         email: "JesusDBarnum@dayrep.com",
-        password:"12345678",
-        password_confirmation:"123456789"
+        password: "12345678",
+        password_confirmation: "123456789"
       )
       expect(@user.valid?).to be_falsy
     end
 
+    it "should NOT create the user if password is not present" do
+      @user = User.new(
+        first_name: "Jesus",
+        last_name: "Barnum",
+        email: "JesusDBarnum@dayrep.com",
+        password: nil,
+        password_confirmation: "123456789"
+      )
+      expect(@user.valid?).to be_falsy
+    end
 
-
+    it "should NOT create the user if password_confirmation is not present" do
+      @user = User.new(
+        first_name: "Jesus",
+        last_name: "Barnum",
+        email: "JesusDBarnum@dayrep.com",
+        password: "12345678",
+        password_confirmation: nil
+      )
+      expect(@user.valid?).to be_falsy
+    end
 
   end
   
