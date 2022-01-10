@@ -29,6 +29,19 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages[0]).to eq("Password confirmation doesn't match Password")
     end
 
+    it "should NOT create the user if the password is not at least 8 characters" do
+      @user = User.new(
+        first_name: "Jesus",
+        last_name: "Barnum",
+        email: "JesusDBarnum@dayrep.com",
+        password: "1234",
+        password_confirmation: "1234"
+      )
+
+      expect(@user.valid?).to be_falsy
+      expect(@user.errors.full_messages[0]).to eq("Password is too short (minimum is 8 characters)")
+    end
+
     it "should NOT create the user if password is not present" do
       @user = User.new(
         first_name: "Jesus",
@@ -98,6 +111,7 @@ RSpec.describe User, type: :model do
         password: "123456789",
         password_confirmation: "123456789"
       )
+
       expect(@user.valid?).to be_falsy
       expect(@user.errors.full_messages[0]).to eq("Last name can't be blank")
     end
@@ -110,6 +124,7 @@ RSpec.describe User, type: :model do
         password: "123456789",
         password_confirmation: "123456789"
       )
+
       expect(@user.valid?).to be_falsy
       expect(@user.errors.full_messages[0]).to eq("Email can't be blank")
     end
