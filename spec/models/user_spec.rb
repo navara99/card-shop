@@ -48,6 +48,30 @@ RSpec.describe User, type: :model do
       expect(@user.valid?).to be_falsy
     end
 
+    it "should NOT create the user if the email already exists" do
+      @user = User.new(
+        first_name: "Jesus",
+        last_name: "Barnum",
+        email: "JesusDBarnum@dayrep.com",
+        password: "12345678",
+        password_confirmation: "12345678"
+      )
+      @user.save
+      @user2 = User.new(
+        first_name: "Jesus",
+        last_name: "Cena",
+        email: "JesusDBarnum@dayrep.com",
+        password: "12345678abc",
+        password_confirmation: "12345678abc"
+      )
+      expect(@user2.valid?).to be_falsy
+    end
+
+    
+
+
+
+
   end
   
 
