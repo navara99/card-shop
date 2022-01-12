@@ -1,0 +1,22 @@
+<p>Thank you for shopping with us. Your order total is <strong> CDN <%= humanized_money_with_symbol @order.total_cents / 100.0 %>. </strong></p>
+
+<table class="table table-bordered">
+  <thead >
+    <tr>
+        <th>Product</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @line_items.each do |item| %>
+    <tr>
+      <td><h4><%= item.product.name %></h4><br><p><%= item.product.description %></p></td>
+      <td><%= humanized_money_with_symbol item.product.price %></td>
+      <td><%= item.quantity %></td>
+      <td><%= humanized_money_with_symbol item.product.price * item.quantity %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
