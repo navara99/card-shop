@@ -28,10 +28,14 @@ class OrdersController < ApplicationController
   end
 
   def perform_stripe_charge
+    user = User.find_by_id(session[:user_id])
+
+    charge_description = user ? "#{user.first_name} #{user.last_name}'s' Card Shop Order" : "Guest Order"
+
     Stripe::Charge.create(
       source:      params[:stripeToken],
       amount:      cart_subtotal_cents,
-      description: "Khurram Virani's Jungle Order",
+      description: charge_description,
       currency:    'cad'
     )
   end
