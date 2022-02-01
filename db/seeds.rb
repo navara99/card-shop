@@ -144,6 +144,30 @@ cat4.products.create!({
   price: 209.99
 });
 
+cat2.products.create!({
+  name:  'Black Rose Dragon - CSOC-EN039 - Ultra Rare - 1st Edition',
+  description: Faker::Hipster.paragraph(4),
+  image: open_asset('blackrose.jpg'),
+  quantity: 4,
+  price: 29.99
+});
+
+cat2.products.create!({
+  name:  'Jinzo - YAP1-EN007 - Ultra Rare - Limited Edition',
+  description: Faker::Hipster.paragraph(4),
+  image: open_asset('jinzo.jpg'),
+  quantity: 4,
+  price: 9.99
+});
+
+cat2.products.create!({
+  name:  'Cyber End Dragon - CRV-EN036 - Ultimate Rare - 1st Edition',
+  description: Faker::Hipster.paragraph(4),
+  image: open_asset('cyberend.jpg'),
+  quantity: 1,
+  price: 374.99
+});
+
 cat3.products.create!({
   name:  'Finale of Devastation',
   description: Faker::Hipster.paragraph(4),
@@ -153,7 +177,7 @@ cat3.products.create!({
 });
 
 cat4.products.create!({
-  name:  '2021-22 Panini HOOPS NBA Basketball Hobby Box',
+  name:  '2017 Panini HOOPS NBA Basketball Hobby Box',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('17-hobby-box.jpg'),
   quantity: 2,
@@ -166,6 +190,30 @@ cat1.products.create!({
   image: open_asset('magikarp.jpg'),
   quantity: 0,
   price: 10.99
+});
+
+cat1.products.create!({
+  name:  'Dark Blastoise - 3/82 - Holo Rare - 1st Edition',
+  description: Faker::Hipster.paragraph(4),
+  image: open_asset('darkblastoise.jpg'),
+  quantity: 2,
+  price: 279.99
+});
+
+cat1.products.create!({
+  name:  'Exeggcute 74/130 Common',
+  description: Faker::Hipster.paragraph(4),
+  image: open_asset('exegg.jpg'),
+  quantity: 15,
+  price: 0.75
+});
+
+cat1.products.create!({
+  name:  'Gyarados 7/130 Holo Rare',
+  description: Faker::Hipster.paragraph(4),
+  image: open_asset('gyardos.jpg'),
+  quantity: 5,
+  price: 20.99
 });
 
 cat2.products.create!({
@@ -188,7 +236,7 @@ cat1.products.create!({
   name:  'Mewtwo - 10/102 - Holo Rare - Shadowless Edition',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('mewtwo.jpg'),
-  quantity: 1,
+  quantity: 3,
   price: 95.99
 });
 
@@ -198,6 +246,14 @@ cat2.products.create!({
   image: open_asset('darkmagician.jpg'),
   quantity: 12,
   price: 27.99
+});
+
+cat1.products.create!({
+  name:  'Charizard - 4/102 - Holo Rare - Unlimited Edition',
+  description: Faker::Hipster.paragraph(4),
+  image: open_asset('charizard.jpg'),
+  quantity: 1,
+  price: 285.99
 });
 
 puts "DONE!"
