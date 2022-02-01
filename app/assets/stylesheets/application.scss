@@ -9,9 +9,19 @@
 // Global
 body {
   padding-top: 70px;
+  background-color: #f8f8ff;
 }
 
 // Bootstrap adjustments
 form.button_to {
   display: inline;
+}
+
+.auth-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
