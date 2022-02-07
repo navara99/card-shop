@@ -41,7 +41,7 @@
             data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
             data-amount="<%= cart_subtotal_cents %>"
             data-name="Card Shop"
-            data-description="<%= (@user ? @user.first_name + " " + @user.last_name : "Guest") + "'s Card Shop Order" %>"
+            data-description="<%= (@user ? @user.first_name : "Guest") + "'s Card Shop Order" %>"
             data-locale="auto"
             data-email=<%= @user.email if @user %>
             data-currency="cad">
