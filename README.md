@@ -10,6 +10,34 @@ A mini e-commerce store that sells various trading cards. This application was b
 
 ## Final Product
 
+* Users can browse cards either as a guest or registered user and add items to their cart
+
+![Home Page](./docs/home-page.gif)
+
+* Users can browse cards by categories
+
+![Categories](./docs/categories.gif)
+
+* Users can change the quantities of items in their cart before purchasing
+
+![Cart](./docs/cart.gif)
+
+* If the user is not logged in, they will be prompted for their email before they can make the purchase in order to send a confirmation email. 
+
+![Purchase as guest](./docs/purchasing_as_guest.gif)
+
+* If the user is logged in, a confirmation email is sent to the email they registered with.
+
+![Purchase as registered user](./docs/purchase_as_user.gif)
+
+* Sample confirmation email from [letter opener](https://github.com/ryanb/letter_opener).
+
+![Confirmation Email](./docs/email.png)
+
+* Admins can add or delete products from the products page
+
+![Add or delete products](./docs/admin-products.gif)
+
 ## Getting Started
 
 ### Additional Steps for Apple M1 Machines
